@@ -1,0 +1,844 @@
+/*
+    Template: Bold - Personal Resume and Portfolio
+    Author: Linewp
+    Version: 1.0
+*/
+
+
+/* TABLE OF CONTENTS
+
+    1. Body, Links, Section Titles, General
+    2. Headerbar, Navigation
+    3. Every Section Titles
+    4. Section Intro
+    5. Section About
+    6. Section Resume
+    7. Section Portfolio (Works)
+    8. Section Services
+    9. Section Contact
+    10. Buttons & Modals
+    11. Media Queries For Responsive Design
+*/
+ 
+
+/* 1. Body, Links, Section Titles, General
+-------------------------------------------------*/
+html, body {
+     width: 100%;
+     height: 100%;
+}
+body {
+	font-family: "Raleway",sans-serif;
+  	font-size: 14px;
+  	color: #222222;
+  	-webkit-font-smoothing: antialiased;
+	background-color: #1a1a1a;
+}
+a {
+  	color: #222222;
+  	-webkit-transition: 0.3s;
+  	-moz-transition: 0.3s;
+  	transition: 0.3s;
+}
+a:hover {
+  	color: #1ABC9C;
+  	text-decoration:none;
+}
+a:focus {
+  	outline: none;
+  	color: #1ABC9C;
+}
+hr {
+	width: 20px;
+	margin: 40px auto;
+	height: 1px !important;
+	color: #777;
+	background-color: #777;
+}
+p {
+	line-height: 24px;
+	letter-spacing: 0px;
+	font-size: 14px;
+	color: #888;
+}
+/*PAGE LOADER*/
+
+#loader {
+    background: #ffffff;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+#loaderInner {
+    background:#ffffff url(../images/load.gif) center center no-repeat;
+    height: 60px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 60px;
+}
+
+/* 2. Headerbar, Navigation
+-------------------------------------------------*/
+.content-wrap {
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+
+.content::before {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0s 0.3s;
+	transition: opacity 0.3s, transform 0s 0.3s;
+	-webkit-transform: translate3d(100%,0,0);
+	transform: translate3d(100%,0,0);
+}
+/* Menu Button */
+.menu-button {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 1000;
+	padding: 0;
+	width: 60px;
+	height: 60px;
+	font-size: 21px;
+	border: 0;
+  	outline: 0;
+	color: #ffffff;
+	background: #0a0a0a;
+}
+
+/* Menu */
+.menu-wrap {
+	position: fixed;
+	z-index: 999;
+	background: #0a0a0a;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	width: 240px;
+	padding: 20px 20px 10px 20px;
+	text-align: left;
+	top:70px;
+	left: 10px;
+	opacity: 0;
+	display: none;
+
+}
+.menu {
+	height: 100%;
+	opacity: 0;
+	color: #777777;
+	text-align: left;
+}
+.menu-nav {-webkit-padding-start: 0px;-moz-padding-start:0px;}
+.menu-nav li {list-style: none;}
+.menu-nav li a {
+	color: #777777;
+	line-height: 40px;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	padding: 5px;
+	text-decoration: none;
+}
+.menu-nav li.active a {
+	border-bottom: 1px solid #1ABC9C;
+	color: #ffffff;
+}
+
+/* Shown menu */
+.show-menu .content::before {opacity: 1;}
+.show-menu .menu-wrap {opacity: 1;display: block;}
+.show-menu .menu {opacity: 1;}
+
+
+/* 3. Every Section Titles
+-------------------------------------------------*/
+.sectionTitle {
+	text-align: center;
+	padding-top: 75px;
+	padding-bottom: 25px;
+}
+.sectionTitle h1 {
+  	font-family: "Montserrat",sans-serif;
+  	letter-spacing: 1px;
+  	font-size: 24px;
+  	font-weight: 600;
+  	text-transform: uppercase;
+  	padding-bottom: 10px;
+  	margin-bottom: 10px;
+}
+.sectionTitle h4 {
+  	font-family: "Montserrat",sans-serif;
+  	letter-spacing: 1px;
+  	font-size: 12px;
+  	font-weight: 400;
+  	text-transform: uppercase;
+  	padding-bottom: 0px;
+  	margin-bottom: 10px;
+  	color: #444;
+}
+.sectionTitle .separatorlinecolor {
+  	margin-bottom: 30px;
+}
+.separatorlinecolor {
+  	width: 75px;
+  	height: 2px;
+  	margin: 0 auto;
+  	background: #1ABC9C;
+}
+.separatorlinewhite {
+  	width: 100px;
+  	height: 2px;
+  	margin: 0 auto;
+  	background: #ffffff;
+}
+
+/* 4. Section Intro
+-------------------------------------------------*/
+#sectionIntro {
+	text-align: center;
+	background-color: #1a1a1a;
+ 	background-image: url(../images/bg.jpg);
+ 	background-size: cover;
+ 	background-repeat: no-repeat;
+ 	background-position: 50% 40%;
+	height: auto;
+	width: 100%;
+	-webkit-box-shadow: inset 0px -9px 33px -5px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset 0px -9px 33px -5px rgba(0,0,0,0.2);
+	box-shadow: inset 0px -9px 33px -5px rgba(0,0,0,0.2);
+}
+.aboutContainer {
+	padding: 0;
+}
+.introHeader {
+	height: 100%;
+ 	text-align: left;
+ 	padding-left:0;
+ 	padding-top: 25%;
+ 	min-height: 700px;
+}
+.introContent {
+	text-align: center;
+}
+.introHeading h1 {
+  	color: #eee;
+  	font-family: "Montserrat",sans-serif;
+  	font-size:60px;
+  	font-weight: 700;
+  	letter-spacing: 1px;
+  	text-transform: uppercase;
+  	padding-bottom: 0px;
+  	line-height: 75px;
+}
+.introTags {
+	display: table;
+	margin: 0 auto;
+	font-size: 12px;
+  	font-weight: 300;
+  	letter-spacing: 5px;
+  	color: #ffffff;
+  	padding: 15px;
+  	background: transparent;
+  	text-transform: uppercase;
+}
+a.scroll-down {
+	position: absolute;
+	bottom: 10%;
+}
+a.scroll-down div {
+	font-size: 30px;
+	color: #1ABC9C;
+}
+
+/* 5. Section About
+-------------------------------------------------*/
+#sectionAbout {
+	background: #FAFAFA;
+	padding-bottom: 75px;
+}
+
+.aboutMe {
+	padding: 10px 40px;
+}
+
+.aboutMe h1 {
+  	letter-spacing: 3px;
+  	font-size: 10px;
+  	font-weight: 400;
+  	text-transform: uppercase;
+  	text-align: center;
+  	color: #777;
+  	padding-bottom: 30px;
+}
+.textBlue {
+	color: #1ABC9C;
+}
+.aboutProfile {
+	text-align: center;
+}
+.profileAv {
+	border-radius: 50%;
+	-webkit-border-radius:50%;
+	width: 220px;
+	height: 220px;
+}
+.aboutInfo h3 {
+	margin-top: 0px;
+	color: #444;
+	font-family: "Montserrat",sans-serif;
+	text-transform: uppercase;
+	font-size: 13px;
+	font-weight: 400;
+	margin-bottom: 15px;
+	letter-spacing: 3px;
+}
+.profileInfo {
+	padding-top: 14px;
+	padding-bottom: 12px;
+}
+.aboutInfo h5 {
+	color: #888;
+	text-transform: none;
+	font-size: 14px;
+	letter-spacing: 0px;
+	line-height: 20px;
+}
+.infoSocial li {
+	display: inline;
+	font-size: 16px;
+	margin-left: 6px;
+	margin-right: 6px;
+	list-style: outside none none;
+}
+.infoSocial ul {
+	padding: 0px;
+}
+.infoSocial a {
+	color: #1ABC9C;
+}
+.infoSocial a:hover {
+	color: #5FD0BA;
+}
+
+/* 6. Section Resume
+-------------------------------------------------*/
+#sectionResume {
+	background: #ffffff;
+	min-height: 600px;
+}
+#sectionResume h2 {
+	font-family: "Montserrat",sans-serif;
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+	margin-bottom: 30px;
+}
+.resumeLeft span, .resumeRight span {
+	font-size: 40px;
+}
+.resumeLeft {
+	text-align: right;
+	border-right: 1px solid #eee;
+}
+.resumeRight {
+	text-align: left;
+}
+.resumeList {
+	-webkit-padding-start: 0px;
+	-moz-padding-start:0px;
+	padding: 0 10px;
+}
+.resumeList li{
+	list-style: none;
+	margin-top: 40px;
+	margin-bottom: 60px;
+}
+.resumeList li h4 {
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-family: "Montserrat",sans-serif;
+	margin-bottom: 12px;
+}
+.resumeName {
+	color: #666;
+	font-size: 12px;
+	text-transform: lowercase;
+}
+.resumeList p {
+	font-size: 14px;
+  	font-weight: 300;
+  	color: #888;
+  	font-family: inherit;
+  	font-style: italic;
+}
+.resumePeriod {
+	background: #1ABC9C;
+	color: #fff;
+	padding: 2px 5px;
+	font-family: "Montserrat",sans-serif;
+	font-size: 12px;
+	font-style: italic;
+	border-radius: 1px;
+}
+
+.resumeStats {
+  	margin-top: 25px;
+  	text-align: center;
+}
+.resumeStats span {
+	font-size: 38px;
+}
+.resumeStats .col-md-2 {
+  	padding: 50px;
+  	border-left: 1px solid #eee;
+  	border-top: 1px solid #eee;
+}
+
+.statsIconPerc {
+  	font-size: 50px;
+  	font-weight: 500;
+  	letter-spacing: 1px;
+  	font-family: "Montserrat",sans-serif;
+}
+.statsName {
+	font-family: "Montserrat",sans-serif;
+  	text-transform: uppercase;
+  	font-size: 14px;
+  	font-weight: 400;
+  	letter-spacing: 1px;
+}
+
+
+/* 7. Section Portfolio (Works)
+-------------------------------------------------*/
+#sectionWorks {
+	padding-top: 25px;
+	padding-bottom: 100px;
+	text-align: center;
+	background-color: #1a1a1a;
+	color: #ffffff;
+}
+
+/* ====WORKS GRID==== */
+#worksGrid {
+	display: table;
+}
+.worksItem {
+  	display: none;
+  	padding: 0px;
+  	overflow: hidden;
+  	height: auto;
+  	text-align: center;
+}
+.worksItem img {
+	width: 100%;
+	height: auto;
+  	-webkit-transition: all .25s ease-out;
+  	transition: all .25s ease-out;
+}
+.worksItem .itemCaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+  	color: #fff!important;
+	background: rgba(22,22,22,0.1);
+}
+.worksItem:hover .itemCaption {
+	background: rgba(22,22,22,0.9);
+}
+.itemCaption h3 {
+	font-size: 12px;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+.capContent {
+	padding-top: 15%;
+	opacity: 0;
+	-webkit-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+}
+.capPreview {
+	color: #1ABC9C;
+	text-transform: uppercase;
+	font-size: 10px;
+	letter-spacing: 3px;
+	border: 2px solid #1ABC9C;
+	padding: 5px;
+	margin-top: 10px;
+}
+.worksItem:hover .capContent{
+	opacity: 1;
+	padding-top:20%;
+}
+
+/* ====WORKS FILTERS==== */
+.worksFilters {
+  	-webkit-padding-start:0px;
+}
+.worksFilters {
+  	margin: 0 auto;
+  	text-align: center;
+  	margin-bottom: 50px;
+}
+.worksFilters li {
+  	display: inline-block;
+  	cursor: pointer;
+  	padding: 5px;
+  	margin:0 10px;
+  	font-weight: 400;
+  	font-size: 10px;
+  	text-transform: uppercase;
+  	-webkit-transition: all .2s ease-out;
+  	transition: all .2s ease-out;
+  	letter-spacing: 3px;
+  	color: #777777;
+}
+.current-filter {
+  	color: #ffffff!important;
+  	border-bottom: 1px solid #1ABC9C;
+}
+
+/* 8. Section Services
+-------------------------------------------------*/
+#sectionServices {
+    background: none repeat scroll 0 0 #fff;
+    padding-bottom: 50px;
+}
+.servicesCol4 {
+    min-height: 215px;
+    overflow: hidden;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+.servicesCol4 h3 {
+	font-family: "Montserrat",sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 0;
+    padding-top: 0;
+    text-align: left;
+    text-transform: uppercase;
+}
+.servicesCol4 p {
+    font-family: inherit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    padding-top: 10px;
+    text-align: left;
+}
+.servicesCol4 span {
+    color: #3dc9b3;
+    font-size: 40px;
+    text-align: center;
+}
+.servicesLeft {
+    float: left;
+}
+.servicesRight {
+    padding-left: 23%;
+    padding-right: 2%;
+}
+
+/* 9. Section Contact
+-------------------------------------------------*/
+#sectionContact {
+	background: #FAFAFA;
+}
+.contactForm {margin: 0 0 50px 0;}
+.contactForm h1 {
+  	letter-spacing: 5px;
+  	font-size: 15px;
+  	font-weight: 700;
+  	text-transform: uppercase;
+  	text-align: center;
+  	padding-bottom: 30px;
+}
+.contactFooter {
+	background-color: #0a0a0a;
+	padding: 40px 0 30px 0;
+	color: #fff;
+}
+.footerLeft {
+	font-size: 13px;
+	font-weight: 400;
+	color: #777;
+	padding-top: 5px;
+}
+.footerRight {
+	text-align: right;
+	font-size: 24px;
+}
+.footerRight a{
+	color: #777;
+	padding: 0 10px;
+}
+.footerRight a:hover {
+	color: #fff;
+}
+.contactRight {
+	padding-left: 5%;
+}
+.contactBox .icon {
+	color: #1ABC9C;
+	font-size: 25px;
+}
+.contactBox {
+	margin: 15px 0 30px;
+}
+.contactBox h3 {
+	margin-top: 2px;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+  	font-weight: 600;
+  	font-size: 12px;
+  	letter-spacing: 3px;
+}
+section#sectionContact .form-group {
+    margin-bottom: 25px;
+}
+section#sectionContact .form-group input,
+section#sectionContact .form-group textarea {
+    padding: 15px;
+    border: 1px solid #CCCCCC;
+    color: #555;
+    border-radius: 0;
+    font-size: 12px;
+    background-color: transparent;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+section#sectionContact .form-group input.form-control {
+    height: auto;
+}
+section#sectionContact .form-control:focus {
+    border-color: #13B0A5;
+    box-shadow: none;
+}
+section#sectionContact::-webkit-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #999;
+}
+section#sectionContact:-moz-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #999;
+}
+section#sectionContact::-moz-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #999;
+}
+section#sectionContact:-ms-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #999;
+}
+section#sectionContact .text-danger {
+    color: #1ABC9C;
+}
+section#sectionContact ul {
+    padding-left: 14px;
+}
+section#sectionContact .form-text {
+    color: #BFBFBF;
+    margin-top: 50px;
+}
+section#sectionContact .form-text i {
+    color: #fff;
+    padding-right: 15px;
+}
+section#sectionContact .form-text h4 {
+    color: #fff;
+    border-bottom: 3px solid #13b0a5;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+}
+
+
+/* ====GENERAL FORM STYLES==== */
+input, textarea, select {
+    color: #222;
+	background: transparent;
+	vertical-align: top;
+	transition: all 0.25s ease-in-out;
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	margin: 0;
+	padding: 15px;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	border: 1px solid #ccc;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+input:focus, textarea:focus, select:focus {
+	outline: none;
+	position: relative;
+	z-index: 5;
+	transition: all 0.25s ease-in-out;
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	border: 1px solid #1ABC9C;
+}
+
+button.submit {
+	width: auto;
+	cursor: pointer;
+	position: relative;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 16px;
+    background: #1ABC9C;
+    margin: 20px 0;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 13px;
+	font-family: "Montserrat",sans-serif;
+  	font-weight: 400;
+  	letter-spacing: 2px;
+}
+button.submit:hover, .button.submit:focus, .button.submit:active {
+  background-color: #15967D;
+}
+#contactform button[type="submit"][disabled] { background:#777; cursor: default; }
+#contactform div {margin: 20px 0;}
+.contactForm fieldset { padding:0;border:0; }
+.contactForm label {
+	font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* 10. Buttons & Modals
+-------------------------------------------------*/
+.button {
+	border:0;
+  	outline: 0;
+  	overflow:hidden;
+  	z-index: 1;
+  	cursor: pointer;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.button-medium {
+	padding: 10px 14px;
+}
+.button-color {
+	background: #1ABC9C;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+.button-color a {
+	color: #ffffff;
+	letter-spacing: 1px;
+}
+.modal-box {
+	max-width: 550px;
+	background: #fff;
+	position: relative;
+	margin: 0 auto;
+}
+.modal-box img {
+	width: 100%;
+	height: 100%;
+}
+.modal-box-content {
+	padding: 25px;
+}
+.modal-box-content h2 {
+	text-transform: uppercase;
+	font-size: 17px;
+	font-weight: 400;
+	letter-spacing: 2px;
+}
+.modal-box-content p {
+	color: #777777;
+	line-height: 24px;
+	letter-spacing: 0px;
+	font-size: 14px;
+}
+
+/* 11. Media Queries For Responsive Design
+-------------------------------------------------*/
+@media screen and (max-width: 768px) {
+
+.introHeading h1 {
+  	font-size:35px;
+  	line-height: 45px;
+}
+.introHeading {
+	padding: 0 15px;
+}
+.navbar li {
+	display: block;
+}
+.navbar li a {
+	line-height: 40px;
+}
+.introHeader {
+	min-height: 400px;
+}
+.resumeList {
+	padding: 25px;
+}
+}
+
+@media screen and (max-width: 480px) {
+
+.aboutMe {
+	padding: 20px;
+}
+.resumeList {
+	padding: 15px;
+}
+.introTags {
+	font-size: 16px;
+	padding: 3px;
+}
+}
